@@ -13,7 +13,7 @@ class DRomb
 {
     protected int d1;
     protected int d2;
-    protected ColorName c; // тепер тип — ColorName
+    protected ColorName c; 
 
     public DRomb(int d1, int d2, ColorName color)
     {

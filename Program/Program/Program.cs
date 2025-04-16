@@ -3,9 +3,9 @@ using System;
 class DRomb
 {
     protected int d1, d2;
-    protected string color;
+    protected int color;
 
-    public DRomb(int d1, int d2, string color)
+    public DRomb(int d1, int d2, int color)
     {
         this.d1 = d1;
         this.d2 = d2;
@@ -24,9 +24,9 @@ class DRomb
         set { d2 = value; }
     }
 
-    public string Color
+    public int Color
     {
-        get { return color; } 
+        get { return color; }
     }
 
     public void DisplayDimensions()
@@ -52,7 +52,19 @@ class DRomb
 
     public void DisplayColor()
     {
-        Console.WriteLine($"Колір ромба: {color}");
+        Console.WriteLine($"Колір ромба: {GetColorName()}");
+    }
+
+    private string GetColorName()
+    {
+        return color switch
+        {
+            1 => "Червоний",
+            2 => "Синій",
+            3 => "Зелений",
+            4 => "Жовтий",
+            _ => "Невідомий"
+        };
     }
 }
 
@@ -61,9 +73,9 @@ class Program
     static void Main(string[] args)
     {
         DRomb[] rombs = {
-            new DRomb(10, 15, "Червоний"),
-            new DRomb(5, 5, "Синій"),
-            new DRomb(8, 12, "Зелений")
+            new DRomb(10, 15, 1),
+            new DRomb(5, 5, 2),
+            new DRomb(8, 12, 3)
         };
 
         int squareCount = 0;
